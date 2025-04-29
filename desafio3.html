@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafío 3 - Love U</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding-top: 80px;
+            overflow: hidden;
+            position: relative;
+            animation: fondo 10s infinite alternate;
+        }
+
+        @keyframes fondo {
+            0% { background: #0d0d0d; }
+            50% { background: #1f1f2e; }
+            100% { background: #0d0d0d; }
+        }
+
+        h1 {
+            font-size: 1.9em;
+            margin-bottom: 30px;
+            animation: aparecer 2s ease-in-out;
+            position: relative;
+            z-index: 2;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 15px auto;
+            max-width: 600px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        a {
+            color: #79d6ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            width: 250px;
+            position: relative;
+            z-index: 2;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #292929;
+            color: white;
+            border: 2px solid white;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        button:hover {
+            background-color: #444444;
+            transform: scale(1.1);
+        }
+
+        .niebla {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: url('https://i.imgur.com/O3ZC7qZ.png') repeat;
+            opacity: 0.1;
+            animation: moverNiebla 60s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes moverNiebla {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(-50px, -50px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+
+    <script>
+        function verificarClave() {
+            const clave = document.getElementById("clave").value.trim();
+            if (clave === "05102503") {
+                window.location.href = "desafio4.html"; // <-- cambia al archivo correcto
+            } else {
+                alert("Esa no es la contraseña ... recuerda seguir bien las instrucciones 🧩");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="niebla"></div>
+
+    <h1>¡Estamos más cerca!</h1>
+
+    <p>1. Mándame por <strong>WhatsApp</strong> un ❤️.</p>
+    <p>2. Entra a este video justo en el momento indicado:<br>
+        <a href="https://youtu.be/hgFE1v6qql0?si=ITGVkfZvGdmGvCll&t=194" target="_blank">
+            Ver video
+        </a><br>
+        y mándame por WhatsApp la frase que escuchas exactamente en ese segundo.
+    </p>
+    <p>3. Pídeme la próxima contraseña por WhatsApp 😉</p>
+
+    <input type="text" id="clave" placeholder="Escribe aquí la contraseña...">
+    <br>
+    <button onclick="verificarClave()">Desbloquear el próximo desafío</button>
+
+    <audio autoplay loop>
+        <source src="misteriosa.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio HTML5.
+    </audio>
+
+</body>
+</html>
